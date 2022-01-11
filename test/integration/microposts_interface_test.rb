@@ -40,7 +40,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
 
   test "micropost sidebar count" do
     log_in_as(@user)
-    get current_user
+    get @user == current_user
     assert_match "#{FILL_IN} microposts", response.body
     # User with zero microposts
     other_user = users(:angel)
