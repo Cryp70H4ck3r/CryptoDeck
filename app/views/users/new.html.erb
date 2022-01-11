@@ -1,21 +1,21 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 usr_box">
+    <h1 class="prt_h1">Create Your Portal!</h1>
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label 'Username:', class: 'usr_txt' %>
+      <%= f.text_field :username, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label 'Email:', class: 'usr_txt' %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label 'Password:', class: 'usr_txt' %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label 'Confirm Password:', class: 'usr_txt' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
