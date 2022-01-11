@@ -1,1 +1,51 @@
-# Left Empty For Now #
+
+crypto:
+  first_name: Crypto
+  middle_name: Bio
+  last_name: Hacker
+  username: Cryp70 H4ck3r
+  bio: Hacker, Coder, Nerd
+  phone: 469-307-2579
+  email: cryp70_h4ck3r@protonmail.com
+  job_title: Lead Developer
+  job_duties: Design and build CryptoDeck
+  company_name: CryptoDeck
+  college_degree: Doctoral of Computer Science
+  college_name: Ashley University
+  btc_adr: abc123
+  eth_adr: a1b2c3
+  password_digest: <%= User.digest('password') %>
+
+angel:
+  first_name: Angel
+  middle_name: Gospel
+  last_name: Gamer
+  username: 4ng3l G4m3r
+  bio: Gamer, Wife, Nerd
+  phone: 469-307-2578
+  email: 4ng3l_g4m3r@protonmail.com
+  job_title: Gamer
+  job_duties: Stream Game Plays
+  company_name: 4ng3l Gamerz
+  college_degree: Video Game Design & Creation
+  college_name: Weatherford College
+  btc_adr: ab12c3
+  eth_adr: ac23b1
+  password_digest: <%= User.digest('password') %>
+
+celtic:
+  first_name: Celtic
+  middle_name: Irish
+  last_name: Hackerz
+  username: C3lt1c H4ck3r
+  bio: Keyboard warrior
+  phone: 350-555-2505
+  email: c3lt1cviking90@gmail.com
+  job_title: Hacker
+  job_duties: Hack the Planet
+  company_name: Internet
+  college_degree: Certified Ethical Hacker
+  college_name: EC-Council
+  btc_adr: zyx123
+  eth_adr: xyz312
+  password_digest: <%= User.digest('password') %>
