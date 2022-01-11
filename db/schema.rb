@@ -10,6 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_01_11_175923) do
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.string "username"
+    t.string "bio"
+    t.string "email"
+    t.string "phone"
+    t.string "location"
+    t.string "job_title"
+    t.string "job_duties"
+    t.string "company_name"
+    t.string "college_degree"
+    t.string "college_name"
+    t.string "btc_adr"
+    t.string "eth_adr"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
 
 end
