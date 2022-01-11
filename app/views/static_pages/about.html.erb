@@ -1,3 +1,41 @@
 <% provide(:title, "About") %>
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div class="center jumbotron abt_jumbo">
+  <h1 class="abt_h1" style="color: #FFF;">About CryptoDeck</h1>
+
+  <h2 class="abt_h2">
+    With hundreds of social media sites you can utilize and explore to connect with friends &amp; family, none provides
+    you with the true power of complete anonymity. None gives you access and reports on cryptocurrencies. And other ways
+    we can attempt to make our platform better than our competition. <br/>
+    Instead of breaking down our competitors, we will encourage our viewers by promoting what we have to offer!<br/>
+    <br/>
+    Let us break down a few of the amazing things CryptoDeck has available for you!<br/>
+    <br/>
+    <strong style="color: #0F0;">Security &amp; Privacy;</strong><br/>
+    * Randomized IPv4/IPv6 Address!<br/>
+    * Secured ECDSA 384 Bit Encrypted Connections!<br/>
+    * Embedded Database!<br/>
+    * Ruby on Rails Platform!<br/>
+    * Secured Hash Passwords!<br/>
+    * No-Tracking Cookies!<br/>
+    <br/>
+    <strong style="color: #0F0;">Cryptocurrencies;</strong><br/>
+    <i>Still In Beta-Development Cycles</i><br/>
+    * Live 24/7~365 Prices!<br/>
+    * Secured Wallets!<br/>
+    * Cryptocoin Gifts!<br/>
+    <br/>
+    <strong style="color: #0F0;">Interactions;</strong><br/>
+    * Create/Edit Posts!<br/>
+    * Share Images/Videos!<br/>
+    * Hashtags!<br/>
+    * Mentions!<br/>
+    * Likes &amp; Follows!<br/>
+    <br/>
+    ** Please Note: CryptoDeck is an ongoing live build! This means that we are constantly working hard to add these features mentioned above, and more
+    as we learn and grow more! Future plans includes creating mobile applications as well. <br/>
+    <br/>
+    If you have any questions, comments, or concerns, please contact us <%= link_to 'Here', contact_path %>.
+  </h2>
+
+  <%= link_to "Enter Portal!", '#', class: "btn btn-lg btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to 'Create Portal!', '#', class: 'btn btn-lg btn-success' %>
+</div>

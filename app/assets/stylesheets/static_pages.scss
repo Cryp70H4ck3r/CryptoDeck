@@ -1,69 +1,265 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* universal */
+/*
+  Google Font Styles;
 
-body {
+  font-family: 'Exo', sans-serif;
+
+  font-family: 'IBM Plex Serif', serif;
+
+  font-family: 'Play', sans-serif;
+
+  font-family: 'Raleway', sans-serif;
+
+  font-family: 'Righteous', cursive;
+
+  font-family: 'Source Code Pro', monospace;
+
+  font-family: 'Ubuntu', sans-serif;
+*/
+
+/* Universal Styling */
+
+body
+{
   padding-top: 60px;
+  background-image: url('crypto_wlp1.jpeg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-section {
+section
+{
   overflow: auto;
 }
 
-textarea {
+textarea
+{
   resize: vertical;
 }
 
-.center {
+.center
+{
   text-align: center;
 }
 
-.center h1 {
+.center h1
+{
   margin-bottom: 10px;
 }
 
-/* typography */
+/* Navigation Styling */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-/* header */
-
-#logo {
+#logo
+{
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #0F0;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  font-family: 'Exo', sans-serif;
 }
 
-#logo:hover {
-  color: #fff;
+#logo:hover
+{
+  color: #00F;
   text-decoration: none;
+  cursor: crosshair;
 }
+
+.hdr_lnk
+{
+  font-family: 'Righteous', cursive;
+  font-size: 18px;
+  cursor: crosshair;
+}
+
+/* User Portal Styling */
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* Support Page Styling */
+
+  /* Support Page jumbotron Styling */
+  .sprt_jumbo
+  {
+    background-color: rgba(255,255,255,0.7);
+    border: 3px solid #00F;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px #00F;
+    margin-top: 25px;
+  }
+
+  /* Home Page H1 Font Styling */
+  .sprt_h1
+  {
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    text-shadow: 5px 5px 8px #00F;
+    color: #000;
+  }
+
+  /* Home Page H2 Font Styling */
+  .sprt_h2
+  {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: #000;
+  }
+
+/* Contact Page Styling */
+
+  /* Contact Page jumbotron Styling */
+  .cnt_jumbo
+  {
+    background-color: rgba(0,0,0,0.7);
+    border: 3px solid #0F0;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px #0F0;
+    margin-top: 25px;
+  }
+
+  /* Contact Page H1 Font Styling */
+  .cnt_h1
+  {
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    text-shadow: 5px 5px 8px #0F0;
+    color: #FFF;
+  }
+
+  /* About Page H2 Font Styling */
+  .cnt_h2
+  {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: #FFF;
+  }
+
+/* About Page Styling */
+
+  /* About Page jumbotron Styling */
+  .abt_jumbo
+  {
+    background-color: rgba(0,0,0,0.7);
+    border: 3px solid #0F0;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px #0F0;
+    margin-top: 25px;
+  }
+
+  /* About Page H1 Font Styling */
+  .abt_h1
+  {
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    text-shadow: 5px 5px 8px #0F0;
+    color: #FFF;
+  }
+
+  /* About Page H2 Font Styling */
+  .abt_h2
+  {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: #FFF;
+  }
+
+/* Home Page Styling */
+
+  /* Home Page jumbotron Styling */
+  .hme_jumbo
+  {
+    background-color: rgba(255,255,255,0.7);
+    border: 3px solid #00F;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px #00F;
+    margin-top: 25px;
+  }
+
+  /* Home Page H1 Font Styling */
+  .hme_h1
+  {
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    text-shadow: 5px 5px 8px #00F;
+    color: #000;
+  }
+
+  /* Home Page H2 Font Styling */
+  .hme_h2
+  {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: #000;
+  }

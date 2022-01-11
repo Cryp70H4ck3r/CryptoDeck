@@ -1,3 +1,12 @@
 <% provide(:title, "Contact") %>
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<div class="center jumbotron cnt_jumbo">
+  <h1 class="cnt_h1" style="color: #FFF">Contact CryptoDeck</h1>
+
+  <h2 class="cnt_h2">
+    We appreciate all of our viewers and users. If you have any questions, comments, concerns or general inquiries, please utilize the following methods;<br/>
+    <br/>
+    <%= link_to 'GitHub', 'https://github.com/cryp70-h4ck3r', target: '_blank', class: 'btn btn-lg btn-info' %>&nbsp;&nbsp;&nbsp;<%= link_to 'Twitter', 'https://twitter.com/Cryp70_H4ck3r', target: '_blank', class: 'btn btn-lg btn-primary' %>&nbsp;&nbsp;&nbsp;<%= link_to 'Email', 'mailto:cryp70_h4ck3r@protonmail.com', target: '_blank', class: 'btn btn-lg btn-warning' %>
+  </h2>
+
+  <%= link_to "Enter Portal!", '#', class: "btn btn-lg btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to 'Create Portal!', '#', class: 'btn btn-lg btn-success' %>
+</div>
