@@ -5,6 +5,11 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.username %>
+        <% if current_user.admin? %>
+        User is AdmiN!
+        <% else %>
+        User is NOT Admin!
+        <% end %>
       </h1>
     </section>
   </aside>

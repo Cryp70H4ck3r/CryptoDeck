@@ -12,9 +12,10 @@ crypto:
   company_name: CryptoDeck
   college_degree: Doctoral of Computer Science
   college_name: Ashley University
-  btc_adr: abc123
-  eth_adr: a1b2c3
+  btc_adr: bc1qml9clwsw3a7l0uu9mg4x4tytd2qnd6yp5js9px
+  eth_adr: 0x18A2Dbb76Ff69e0Cb402aa3d564b8f647e42285f
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 angel:
   first_name: Angel
@@ -29,8 +30,8 @@ angel:
   company_name: 4ng3l Gamerz
   college_degree: Video Game Design & Creation
   college_name: Weatherford College
-  btc_adr: ab12c3
-  eth_adr: ac23b1
+  btc_adr: bc1qml9clwsw3a7l0uu9mg4x4tytd2qnd6yp5js9px
+  eth_adr: 0x18A2Dbb76Ff69e0Cb402aa3d564b8f647e42285f
   password_digest: <%= User.digest('password') %>
 
 celtic:
@@ -46,6 +47,26 @@ celtic:
   company_name: Internet
   college_degree: Certified Ethical Hacker
   college_name: EC-Council
-  btc_adr: zyx123
-  eth_adr: xyz312
+  btc_adr: bc1qml9clwsw3a7l0uu9mg4x4tytd2qnd6yp5js9px
+  eth_adr: 0x18A2Dbb76Ff69e0Cb402aa3d564b8f647e42285f
   password_digest: <%= User.digest('password') %>
+
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  first_name: <%= "User #{n}" %>
+  middle_name: <%= "User #{n}" %>
+  last_name: <%= "User #{n}" %>
+  username: <%= "User #{n}" %>
+  bio: <%= "User #{n}" %>
+  phone: <%= "User #{n}" %>
+  email: <%= "user-#{n}@cryptodeck.com" %>
+  job_title: <%= "User #{n}" %>
+  job_duties: <%= "User #{n}" %>
+  company_name: <%= "User #{n}" %>
+  college_degree: <%= "User #{n}" %>
+  college_name: <%= "User #{n}" %>
+  btc_adr: <%= "User #{n}" %>
+  eth_adr: <%= "User #{n}" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

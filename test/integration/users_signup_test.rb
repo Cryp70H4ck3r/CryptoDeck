@@ -10,7 +10,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          last_name: "",
                                          username: "",
                                          phone: "",
-                                         email: "user@invalid",
+                                         email: "cryp70_h4ck3r@Protonmail",
                                          bio: "",
                                          location: "",
                                          college_name: "",
@@ -20,8 +20,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          company_name: "",
                                          btc_adr: "",
                                          eth_adr: "",
-                                         password:              "foo",
-                                         password_confirmation: "bar" } }
+                                         password:              "abc",
+                                         password_confirmation: "123" } }
     end
     assert_template 'users/new'
   end
@@ -42,8 +42,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          job_title: "Lead Programmer",
                                          job_duties: "Design & Develop CryptoDeck",
                                          company_name: "CryptoDeck",
-                                         btc_adr: "abc123",
-                                         eth_adr: "a1b2c3",
+                                         btc_adr: "bc1qml9clwsw3a7l0uu9mg4x4tytd2qnd6yp5js9px",
+                                         eth_adr: "0x18A2Dbb76Ff69e0Cb402aa3d564b8f647e42285f",
                                          password:              "abc123",
                                          password_confirmation: "abc123"  } }
     end

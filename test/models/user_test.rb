@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   # Set Basic User Information Tests #
   def setup
-    @user = User.new(first_name: "Crypto", middle_name: "Bio", last_name: "Hacker", username: "Cryp70 H4ck3r", bio: "Ethical Hacker, Programmer, Nerd!", email: "cryp70_h4ck3r@protonmail.com", phone: "469-307-2579", location: "Planet Earth, Milky Way Galaxy", job_title: "Lead Programmer", job_duties: "Design & develop Crypto Deck", company_name: "CryptoDeck", college_degree: "Doctoral of Computer Science", college_name: "Ashley University", btc_adr: "abc123", eth_adr: "a1b2c3", password: "abc123", password_confirmation: "abc123")
+    @user = User.new(first_name: "Crypto", middle_name: "Bio", last_name: "Hacker", username: "Cryp70 H4ck3r", bio: "Ethical Hacker, Programmer, Nerd!", email: "cryp70_h4ck3r@protonmail.com", phone: "469-307-2579", location: "Planet Earth, Milky Way Galaxy", job_title: "Lead Programmer", job_duties: "Design & develop Crypto Deck", company_name: "CryptoDeck", college_degree: "Doctoral of Computer Science", college_name: "Ashley University", btc_adr: "bc1qml9clwsw3a7l0uu9mg4x4tytd2qnd6yp5js9px", eth_adr: "0x18A2Dbb76Ff69e0Cb402aa3d564b8f647e42285f", password: "abc123", password_confirmation: "abc123")
   end
 
   # Ensure User Input is Valid #
@@ -220,5 +220,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
 
 end
