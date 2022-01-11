@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   # Set Project Resources #
   resources :users
+  resources :microposts, only: [:create, :destroy]
 end

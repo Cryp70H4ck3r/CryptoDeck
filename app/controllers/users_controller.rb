@@ -10,10 +10,17 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost  = current_user.microposts.build
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def new
     @user = User.new
+  end
+
+  def current_user?(user)
+    user == current_user
   end
 
   def create
@@ -66,7 +73,7 @@ class UsersController < ApplicationController
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      redirect_to(root_url) unless current_user?(@user)
     end
 
     # Confirms an admin user.

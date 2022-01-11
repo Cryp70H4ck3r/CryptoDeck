@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # Handle Before Saving User Arguments #
   attr_accessor :remember_token
   before_save { email.downcase! }
+  has_many :microposts, dependent: :destroy
 
   # Validate User's First Name (first_name) Attributes #
   validates :first_name, presence: true, length: { maximum: 55 }, allow_nil: true
@@ -93,6 +94,10 @@ class User < ApplicationRecord
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
 end
