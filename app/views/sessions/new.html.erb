@@ -1,19 +1,19 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 usr_box">
+    <h1 class="lgn_h1">Enter Portal!</h1>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label 'Email:', class: 'usr_txt' %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label 'Password:', class: 'usr_txt' %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p class="lgn_new_usr">New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
