@@ -232,4 +232,39 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "should follow and unfollow a user" do
+    crypto = users(:crypto)
+    angel  = users(:angel)
+    assert_not crypto.following?(angel)
+    crypto.follow(angel)
+    assert crypto.following?(angel)
+    crypto.unfollow(angel)
+    assert_not crypto.following?(angel)
+    assert angel.followers.include?(crypto)
+    crypto.follow(crypto)
+    assert_not crypto.following?(crypto)
+  end
+
+  test "feed should have the right posts" do
+    crypto = users(:crypto)
+    angel  = users(:angel)
+    celtic = users(:celtic)
+    # Posts from followed user
+    celtic.microposts.each do |post_following|
+      assert crypto.feed.include?(post_following)
+    end
+    # Self-posts for user with followers
+    crypto.microposts.each do |post_self|
+      assert crypto.feed.include?(post_self)
+    end
+    # Self-posts for user with no followers
+    angel.microposts.each do |post_self|
+      assert angel.feed.include?(post_self)
+    end
+    # Posts from unfollowed user
+    angel.microposts.each do |post_unfollowed|
+      assert_not crypto.feed.include?(post_unfollowed)
+    end
+  end
+
 end
