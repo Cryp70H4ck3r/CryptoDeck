@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # Set Root Directory #
+  root 'static_pages#home'
+
+  # Set Static Page Directories #
+  get 'about',    to: 'static_pages#about'
+  get 'support',  to: 'static_pages#support'
+  get 'contact',  to: 'static_pages#contact'
 end
