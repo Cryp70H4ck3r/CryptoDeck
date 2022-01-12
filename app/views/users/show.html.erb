@@ -4,7 +4,7 @@
         <% if @user.banner.attached? %>
           <%= image_tag @user.banner, class: 'fb-image-lg', alt: 'User Profile Banner' %>
         <% else %>
-          <%= image_tag('banner.jpeg', class: 'fb-image-lg', alt: 'Profile Banner Image') %>
+          <%= image_tag('banner.jpg', class: 'fb-image-lg', alt: 'Profile Banner Image') %>
         <% end %>
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, class: 'fb-image-profile thumbnail', alt: 'User Profile Image' %>
