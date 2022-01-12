@@ -1,2 +1,38 @@
+<div class="col-md-8">
+  <h3 class="pst_feed" style="color: #FFF; font-family: 'Ubuntu', sans-serif; text-shadow: 5px 5px 8px #FFF;">About <%= @user.username %></h3>
 
-<span class="post_count"><%= pluralize(@user.microposts.count, "micropost") %></span>
+  <span class="post_count"></span>
+  <p class="user_intel_text">
+    <%= pluralize(@user.microposts.count, "micropost") %>
+  </p>
+  <p class="user_intel_text">
+    First Name: <b style="color: #0F0;"><%= @user.first_name %></b>
+  </p>
+  <p class="user_intel_text">
+    Middle Name: <b style="color: #0F0;"><%= @user.middle_name %></b>
+  </p>
+  <p class="user_intel_text">
+    Last Name: <b style="color: #0F0;"><%= @user.last_name %></b>
+  </p>
+  <p class="user_intel_text">
+    Username: <b style="color: #0F0;"><%= @user.username %></b>
+  </p>
+  <p class="user_intel_text">
+    Company Name: <b style="color: #0F0;"><%= @user.company_name %></b>
+  </p>
+  <p class="user_intel_text">
+    Job Title: <b style="color: #0F0;"><%= @user.job_title %></b>
+  </p>
+  <p class="user_intel_text">
+    Job Duties: <b style="color: #0F0;"><%= @user.job_duties %></b>
+  </p>
+  <p class="user_intel_text">
+    College Name: <b style="color: #0F0;"><%= @user.college_name %></b>
+  </p>
+  <p class="user_intel_text">
+    College Degree: <b style="color: #0F0;"><%= @user.college_degree %></b>
+  </p>
+  <p class="user_intel_text">
+    Location: <b style="color: #0F0;"><%= @user.location %></b>
+  </p>
+</div>
