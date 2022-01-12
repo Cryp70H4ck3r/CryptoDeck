@@ -9,7 +9,7 @@
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, class: 'fb-image-profile thumbnail', alt: 'User Profile Image' %>
         <% else %>
-          <%= image_tag('anon_logo.jpeg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
+          <%= image_tag('anon_logo.jpg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
         <% end %>
         <div class="fb-profile-text">
           <div class="row" style="background-color: rgba(0,0,0,0.5); border: 3px solid #00F; box-shadow: 5px 5px 7px #00F; padding: 10px;">
