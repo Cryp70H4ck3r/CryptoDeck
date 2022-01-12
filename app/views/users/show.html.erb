@@ -1,30 +1,44 @@
 <% provide(:title, @user.username) %>
-<div class="row">
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-      <section class="micropost_form">
-        <% if @user == current_user %>
-        <%= render 'shared/micropost_form' %>
+<div class="container">
+    <div class="fb-profile">
+        <% if @user.banner.attached? %>
+          <%= image_tag @user.banner, class: 'fb-image-lg', alt: 'User Profile Banner' %>
         <% else %>
+          <%= image_tag('banner.jpeg', class: 'fb-image-lg', alt: 'Profile Banner Image') %>
         <% end %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
-      <h3>Micropost Feed</h3>
-      <% if @user.microposts.any? %>
-        <h3>Microposts (<%= @user.microposts.count %>)</h3>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= will_paginate @microposts %>
-      <% end %>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class: 'fb-image-profile thumbnail', alt: 'User Profile Image' %>
+        <% else %>
+          <%= image_tag('anon_logo.jpeg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
+        <% end %>
+        <div class="fb-profile-text">
+          <div class="row">
+            <aside class="col-md-4">
+              <section class="stats">
+                <%= render 'shared/stats' %>
+              </section>
+              <%= render 'follow_form' if logged_in? %>
+              <% if @user == current_user %>
+              <p class="usr_abt_hdr">
+                <%= @user.username %>
+              </p>
+              <section class="micropost_form">
+                <%= render 'shared/micropost_form' %>
+              </section>
+              <% else %>
+              <section class="user_info">
+                <%= render 'shared/user_info' %>
+              </section>
+              <% end %>
+            </aside>
+            <div class="col-md-8">
+              <h3 class="pst_feed">Post Feed</h3>
+              <%= render 'shared/feed' %>
+            </div>
+
+          </div>
+        </div>
+
     </div>
-  </div>
+
 </div>

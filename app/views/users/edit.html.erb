@@ -6,24 +6,37 @@
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+            <%= f.label "Your Avatar:", class: 'frm_txt' %>
+            <%= f.file_field :avatar, class: 'form-control frm_inp' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+            <%= f.label "Your Banner:", class: 'frm_txt' %>
+            <%= f.file_field :banner, class: 'form-control frm_inp' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.label "First Name:", class: 'frm_txt' %>
+            <%= f.text_field :first_name, class: 'form-control frm_inp', placeholder: 'Crypto' %>
+
+            <%= f.label "Middle Name:", class: 'frm_txt' %>
+            <%= f.text_field :middle_name, class: 'form-control frm_inp', placeholder: 'Bio' %>
+
+            <%= f.label "Last Name:", class: 'frm_txt' %>
+            <%= f.text_field :last_name, class: 'form-control frm_inp', placeholder: 'Hacker' %>
+
+            <%= f.label "Username:", class: 'frm_txt' %>
+            <%= f.text_field :uname, class: 'form-control frm_inp', placeholder: 'Cryp70 H4ck3r' %>
+
+            <%= f.label "Email:", class: 'frm_txt' %>
+            <%= f.email_field :email, class: 'form-control frm_inp', placeholder: 'myemail@protonmail.com' %>
+
+            <%= f.label "Password:", class: 'frm_txt' %>
+            <%= f.password_field :password, class: 'form-control frm_inp' %>
+
+            <%= f.label "Confirm Password:", class: 'frm_txt' %>
+            <%= f.password_field :password_confirmation, class: 'form-control frm_inp' %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="https://gravatar.com/emails" target="_blank">change</a>
-    </div>
+
   </div>
 </div>

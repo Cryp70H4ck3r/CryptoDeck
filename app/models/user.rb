@@ -12,7 +12,8 @@ class User < ApplicationRecord
                                   dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
+  has_one_attached :avatar
+  has_one_attached :banner
   # Validate User's First Name (first_name) Attributes #
   validates :first_name, presence: true, length: { maximum: 55 }, allow_nil: true
 
