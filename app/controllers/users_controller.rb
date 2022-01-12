@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar.attach(params[:user][:avatar])
     if @user.save
       reset_session
       log_in @user

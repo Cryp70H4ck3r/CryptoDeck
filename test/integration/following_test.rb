@@ -54,4 +54,11 @@ class FollowingTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "feed on User page" do
+    get current_user
+    @user.feed.paginate(page: 1).each do |micropost|
+      assert_match CGI.escapeHTML(FILL_IN), FILL_IN
+    end
+  end
+
 end

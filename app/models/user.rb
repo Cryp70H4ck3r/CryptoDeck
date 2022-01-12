@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-
   # Validate User's First Name (first_name) Attributes #
   validates :first_name, presence: true, length: { maximum: 55 }, allow_nil: true
 
@@ -107,16 +106,15 @@ class User < ApplicationRecord
 
   # Returns a user's status feed.
   def feed
-    following_ids = "SELECT followed_id FROM relationships
-                     WHERE  follower_id = :user_id"
-    Micropost.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id)
+    part_of_feed = "relationships.follower_id = :id or microposts.user_id = :id"
+    Micropost.left_outer_joins(user: :followers)
+             .where(part_of_feed, { id: id })
              .includes(:user, image_attachment: :blob)
   end
 
   # Follows a user.
   def follow(other_user)
-    following << other_user unless self == other_user
+    following << other_user
   end
 
   # Unfollows a user.

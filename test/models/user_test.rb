@@ -256,6 +256,7 @@ class UserTest < ActiveSupport::TestCase
     # Self-posts for user with followers
     crypto.microposts.each do |post_self|
       assert crypto.feed.include?(post_self)
+      assert_equal crypto.feed.distinct, crypto.feed
     end
     # Self-posts for user with no followers
     angel.microposts.each do |post_self|
