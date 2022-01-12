@@ -1,9 +1,10 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+
 
 <%= will_paginate %>
 
-<ul class="users">
+<ul class="users" style="background-color: rgba(0,0,0,0.7); color: #FFF; box-shadow: 10px 10px 14px #00F; padding: 10px;">
+  <h1 style="font-family: 'Exo', sans-serif; color: #0F0;">All users</h1>
   <% @users.each do |user| %>
     <%= render user %>
   <% end %>
