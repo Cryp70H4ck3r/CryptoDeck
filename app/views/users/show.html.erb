@@ -12,7 +12,7 @@
           <%= image_tag('anon_logo.jpeg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
         <% end %>
         <div class="fb-profile-text">
-          <div class="row">
+          <div class="row" style="background-color: rgba(0,0,0,0.5); border: 3px solid #00F; box-shadow: 5px 5px 7px #00F; padding: 10px;">
             <aside class="col-md-4">
               <section class="stats">
                 <%= render 'shared/stats' %>
@@ -32,7 +32,7 @@
               <% end %>
             </aside>
             <div class="col-md-8">
-              <h3 class="pst_feed">Post Feed</h3>
+              <h3 class="pst_feed" style="color: #FFF; font-family: 'Ubuntu', sans-serif; text-shadow: 5px 5px 8px #0F0;">Portal Journals;</h3>
               <%= render 'shared/feed' %>
             </div>
 

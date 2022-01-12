@@ -1,3 +1,15 @@
+.usr_abt_hdr
+{
+  font-family: 'Exo', sans-serif;
+  font-size: 30px;
+  color: #FFF;
+}
+.post_count
+{
+  font-family: 'Righteous', cursive;
+  font-size: 30px;
+  color: #FFF;
+}
 .fb-profile img.fb-image-lg{
     z-index: 0;
     width: 100%;
@@ -33,4 +45,27 @@
 {
   width: 100px;
   height: 100px;
+}
+
+.upd8_prtl
+{
+  font-family: 'Exo', sans-serif;
+  font-size: 35px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 7px 7px 10px #000;
+}
+
+.portal_box
+{
+  background-color: rgba(255,255,255,0.7);
+  border: 5px solid #000;
+  box-shadow: 10px 10px 15px #00F;
+  padding: 15px;
+}
+
+.frm_txt
+{
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
 }

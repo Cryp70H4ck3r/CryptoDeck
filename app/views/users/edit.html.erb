@@ -1,7 +1,7 @@
 <% provide(:title, "Edit user") %>
-<h1>Update Your Portal</h1>
 
-<div class="row">
+<div class="row portal_box">
+<h1 class="upd8_prtl">Update Your Portal</h1>
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
@@ -24,6 +24,33 @@
 
             <%= f.label "Username:", class: 'frm_txt' %>
             <%= f.text_field :uname, class: 'form-control frm_inp', placeholder: 'Cryp70 H4ck3r' %>
+
+            <%= f.label "Job Title:", class: 'frm_txt' %>
+            <%= f.text_field :job_title, class: 'form-control frm_inp', placeholder: 'Web Developer' %>
+
+            <%= f.label "Job Duties:", class: 'frm_txt' %>
+            <%= f.text_field :job_duties, class: 'form-control frm_inp', placeholder: 'Design & build CryptoDeck!' %>
+
+            <%= f.label "College Degree:", class: 'frm_txt' %>
+            <%= f.text_field :college_degree, class: 'form-control frm_inp', placeholder: 'Doctoral of Computer Science' %>
+
+            <%= f.label "College Name:", class: 'frm_txt' %>
+            <%= f.text_field :college_name, class: 'form-control frm_inp', placeholder: 'Ashley University' %>
+
+            <%= f.label "Location:", class: 'frm_txt' %>
+            <%= f.text_field :location, class: 'form-control frm_inp', placeholder: 'Planet Earth, Milky Way Galaxy' %>
+
+            <%= f.label "Bio:", class: 'frm_txt' %>
+            <%= f.text_field :bio, class: 'form-control frm_inp', placeholder: 'Coder, Nerd, Family Man!' %>
+
+            <%= f.label "Phone:", class: 'frm_txt' %>
+            <%= f.text_field :phone, class: 'form-control frm_inp', placeholder: '469-555-2579' %>
+
+            <%= f.label "Ethereum Address:", class: 'frm_txt' %>
+            <%= f.text_field :eth_adr, class: 'form-control frm_inp', placeholder: '0x21basdlkfj134;laksdfj' %>
+
+            <%= f.label "Bitcoin Address:", class: 'frm_txt' %>
+            <%= f.text_field :btc_adr, class: 'form-control frm_inp', placeholder: 'asd09vasd90v8asdgf90v8d9' %>
 
             <%= f.label "Email:", class: 'frm_txt' %>
             <%= f.email_field :email, class: 'form-control frm_inp', placeholder: 'myemail@protonmail.com' %>
