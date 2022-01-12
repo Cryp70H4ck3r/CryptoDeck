@@ -1,6 +1,10 @@
 
 <li>
-  <%= gravatar_for user, size: 50 %>
+  <% if user.avatar.attached? %>
+    <%= image_tag user.avatar, size: 50 %>
+  <% else %>
+    <%= image_tag('anon_logo.jpeg', size: 50) %>
+  <% end %>
   <%= link_to user.username, user %>
   <% if current_user.admin?  %>
     | <%= link_to "delete", user, method: :delete,
