@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
-      flash[:success] = "Welcome to CryptoDeck!"
+      flash[:success] = "Welcome To Your Portal on CryptoDeck!"
       redirect_to edit_user_path(current_user)
     else
       render 'new'

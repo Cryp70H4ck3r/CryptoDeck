@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to forwarding_url || user
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'Portal Security Details are Invalid. Please Check Your Credentials Again!'
       render 'new'
     end
   end

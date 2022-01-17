@@ -2,7 +2,11 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <%= gravatar_for @user %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class: 'fb-image-profile thumbnail', alt: 'User Profile Image' %>
+      <% else %>
+        <%= image_tag('anon_logo.jpg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
+      <% end %>
       <h1><%= @user.username %></h1>
       <span><%= link_to "view my profile", @user %></span>
       <span><b>Microposts:</b> <%= @user.microposts.count %></span>
@@ -12,6 +16,11 @@
       <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
+          <% if @user.avatar.attached? %>
+            <%= link_to image_tag(user.avatar, size: 30), user, class: 'fb-image-profile thumbnail', alt: 'User Profile Image' %>
+          <% else %>
+            <%= link_to image_tag('anon_logo.jpg', class: 'fb-image-profile thumbnail', alt: 'Profile Image') %>
+          <% end %>
             <%= link_to gravatar_for(user, size: 30), user %>
           <% end %>
         </div>
